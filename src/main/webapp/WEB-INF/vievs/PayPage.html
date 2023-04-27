@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<H1 align="center" >Hello
+    <span th:text="${session.user.name}"></span> !
+</H1>
+<p align="centr">You chose:</p>
+
+<ol>
+    <li align="centr" th:each="item:${ResultList}" th:text="${item.getTitle() + '  '+ item.getPrice()}"> </li>
+
+</ol>
+<H1 align="center"> Total summ:</H1>
+<p align="center"> <span th:text="${ResultSum}"></span></p>
+
+<p align="center"><a href="/ShopFirstPage">Return to start page</a></p>
+
+</body>
+</html>

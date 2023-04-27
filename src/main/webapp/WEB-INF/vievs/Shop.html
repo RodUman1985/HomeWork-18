@@ -1,0 +1,39 @@
+<html lang=\"en\" xmlns:th="">
+<head>
+    <meta charset=\"UTF-8\">
+    <title>Shop</title>
+    <style> ol {
+        padding: 0;
+        margin-left: 50%;
+    }
+    </style>
+</head>
+<body>
+<H1 align="center" >Hello
+         <span th:text="${session.user.name}"></span> !
+   </H1>
+ <form  th:action="@{/Shop}" th:obgect="${session.select}" method="post">
+    <p align="center">
+          <select align="center" name="select" size="1">
+              <option align="center" th:each="item:${goods}" th:text="${item.getTitle() + ' '  + item.getPrice()}"></option>
+          </select>
+
+            <input type="submit" value="Add item">
+    </p>
+ </form>>
+
+<h1 align="center" th:text="${checkOrder}"></h1>
+
+              <ol>
+                  <li th:each="item:${ResultList}" th:text="${item.getTitle() + '  '+ item.getPrice()}"> </li>
+
+              </ol>
+
+
+<form  action="/PayPage" method="post">
+    <input type="submit" value="Result">
+</form>
+
+    <p align="center"><a href="/ShopFirstPage">Return to start page</a></p>
+</body>
+</html>
